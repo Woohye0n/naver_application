@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="rr_control" name="rr_tracking_control" type="rr_tracking_control" output="screen">
+        <rosparam>
+                arrive_dis: 3
+        </rosparam>
+        <remap from="~steer_command" to="/rr_control/steer" />
+        <remap from="~local_path" to="/rr_path_planner/local_path" />
+        <remap from="~state" to="/rr_state_estimation/state" />
+
+    </node>
+
+    <node pkg="rr_control" name="rr_pi_control" type="rr_pi_control" output="screen">
+        <rosparam>
+                motor_k_p: 10.0
+                motor_k_i: 5.0
+                brake_k_p: 100/15
+                braking_threshold: 5.0
+        </rosparam>
+        <remap from="~target_speed" to="/rr_target_speed_selector/target_speed" />
+        <remap from="~feedback" to="/rr_state_estimation/state" />
+        <remap from="~command" to="/rr_control/speed" />
+        <remap from="~on_off" to="/on_off" />
+    </node>
+
+    <node pkg="rr_control" name="rr_command_collector" type="rr_command_collector" output="screen">
+        <remap from="~steer_command_in" to="/rr_control/steer" />
+        <remap from="~speed_command_in" to="/rr_control/speed" />
+        <remap from="~raw_command_out" to="/rr_command_collector/command" />
+    </node>
+
+    <node pkg="rr_control" name="rr_target_speed_selector" type="rr_target_speed_selector" output="screen">
+        <remap from="~target_speed_candidate" to="/rr_target_speed_selector/speed_candidate" />
+        <remap from="~pi_control_target" to="/rr_target_speed_selector/target_speed" />
+        <rosparam>
+            maximum_velocity: 10
+        </rosparam>
+    </node>
+</launch>

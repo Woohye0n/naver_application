@@ -1,0 +1,8 @@
+<launch>
+    <!-- stack 4 -->
+    <include file="$(find rr_common)/launch/rr_common_stack_4.launch"></include>
+    <!-- tracking control -->
+    <include file="$(find rr_control)/launch/rr_control.launch"></include>
+    <!-- path planner -->
+    <include file="$(find rr_path_planner)/launch/rr_path_planner.launch"></include>
+</launch>

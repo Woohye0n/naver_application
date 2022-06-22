@@ -1,0 +1,19 @@
+<launch>
+    <!--local path visualize -->
+    <node pkg="rr_vis" name="rr_vis_obstacle" type="rr_vis_obstacle.py" output="screen">
+        <!-- intput topics -->
+        <remap from="~obstacles" to="/rr_object_tracker/tracking"/>
+        <!-- output topics -->
+        <remap from="~marker" to="/rr_vis/obstacles"/>
+        <rosparam>
+        color_a: 0.5
+        color_r: 1.0
+        color_g: 0.0
+        color_b: 0.0
+        ns: obstacles
+        lifetime: 0.15
+        frame_id: velodyne
+        </rosparam>
+    </node>
+
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find rr_perception)/launch/object_detector.launch"/>
+    <include file="$(find rr_perception)/launch/object_tracker.launch"/>
+    <include file="$(find rr_vis)/launch/rr_vis_obstacle.launch"/>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find rr_perception)/rviz/rr_perception_demo.rviz" />
+</launch>

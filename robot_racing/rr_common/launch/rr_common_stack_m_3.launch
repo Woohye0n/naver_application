@@ -1,0 +1,12 @@
+<launch>
+    <!-- stack 2 -->
+    <include file="$(find rr_common)/launch/rr_common_stack_m_2.launch"></include>
+    <!-- map -->
+    <include file="$(find rr_map)/launch/rr_map.launch"></include>
+    <!-- safety manager -->
+    <include file="$(find rr_safety_manager)/launch/rr_course_out_detector.launch"></include>
+    <!-- state estimation -->
+    <include file="$(find rr_state_estimation)/launch/rr_state_estimation.launch"></include>
+    <!-- perception -->
+    <!-- TO BE ADDED -->
+</launch>

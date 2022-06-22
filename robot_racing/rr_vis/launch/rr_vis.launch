@@ -1,0 +1,22 @@
+<launch>
+        <!--local path visualize -->
+        <node pkg="rr_vis" name="rr_vis_local_path" type="rr_vis_local_path.py" output="screen">
+                <remap from="~local_marker" to="/rr_vis/local_path_marker"/>
+                <remap from="~local_path" to="/rr_path_planner/local_path"/>
+        </node>
+        <!-- map visualize -->
+        <node pkg="rr_vis" name="rr_vis_map_course" type="rr_vis_map_course.py" output="screen">
+                <remap from="~highway_in" to="/rr_vis/course1"/>
+                <remap from="~highway_out" to="/rr_vis/course2"/>
+                <remap from="~map" to="/map_xy_points"/>
+        </node>
+        <!-- position visualize -->
+        <node pkg="rr_vis" name="rr_vis_position" type="rr_vis_position.py" output="screen">
+                <remap from="~position_marker" to="/rr_vis/position_marker"/>
+                <remap from="~state" to="/rr_state_estimation/state"/>
+                <remap from="~heading_arrow" to="/rr_vis/heading"/>
+                <remap from="~box" to="/rr_vis/box"/>
+        </node>
+
+        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find rr_vis)/rviz/rviz.rviz" />
+</launch>

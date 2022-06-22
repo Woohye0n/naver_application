@@ -1,0 +1,6 @@
+Header header
+---
+PointGps[] highway_in    # gps way point of track_in
+PointGps[] highway_out   # gps way point of track_out
+PointGps[] racing_point  # gps way point of racing (fastest route)
+PointGps centroid        # centroid of track in for origin of xy convert

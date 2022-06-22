@@ -1,0 +1,5 @@
+Header header
+---
+PointGps way_point_origin    # origin(0,0) gps point of track         
+PointGps lap_check_in        # starting gps point of lap checking area
+PointGps lap_check_out       # ending gps point of lap checking area  

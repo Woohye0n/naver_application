@@ -1,0 +1,9 @@
+<launch>
+        <node pkg="rr_devices" name="rr_erp42" type="rr_erp42" output="screen">
+            <param name="dev_path" value="/dev/ttyS0"/>
+            <param name="baud" value="115200"/>
+            <param name="feedback_steer_degree_to_raw" value="102.0"/>
+            <param name="wheel_radius_in_meter" value="0.2894"/>
+            
+        </node>
+</launch>

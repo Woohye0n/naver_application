@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+        <node pkg="rr_data_resource_manager" name="rr_data_resource_manager" type="rr_data_resource_manager" output="screen">
+            <param name="path_highway_in" value="$(find rr_data_resource_manager)/track/track_in.txt" type="str"/>
+            <param name="path_highway_out" value="$(find rr_data_resource_manager)/track/track_out.txt" type="str"/>
+            <param name="path_racing_point" value="$(find rr_data_resource_manager)/track/racing_point.txt" type="str"/>
+            <rosparam>
+                lap_check_in_point_lat: 37.364708 
+                lap_check_in_point_lon: 126.7245026 
+                lap_check_out_point_lat: 37.3652382 
+                lap_check_out_point_lon: 126.7250366 
+            </rosparam>
+        </node>
+</launch>

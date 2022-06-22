@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="rr_map" name="rr_map" type="rr_map" output="screen">
+    </node>
+</launch>

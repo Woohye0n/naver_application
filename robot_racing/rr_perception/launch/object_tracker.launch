@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="rr_perception" type="rr_object_tracker_node" name="rr_object_tracker" output="screen">
+        <!-- input topics -->
+        <remap from="~detection" to="/rr_object_detection/detection"/>
+        <!-- output topics -->
+        <!-- <remap from="~tracking" to="/rr_object_tracker/tracking"/> -->
+        <rosparam>
+            max_age: 3
+            min_hits: 4
+            iou_threshold: 1
+        </rosparam>
+    </node>
+</launch>

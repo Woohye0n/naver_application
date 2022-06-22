@@ -1,0 +1,42 @@
+<launch>
+        <node pkg="rr_simul" name="morai_erp42_serial" type="rr_erp42_serial_command" output="screen">
+                <!--publish-->
+                <remap from="~feedback_output" to="/rr_erp42/feedback_ext"/>
+                <remap from="~feedback_raw_output" to="/rr_erp42/feedback"/>
+                <remap from="~command_to_morai" to="/ctrl_cmd_0"/>
+                <!--subscribe-->
+                <remap from="~morai_ego" to="/Ego_topic"/>
+                <remap from="~morai_cmd" to="/rr_erp42/command"/>
+
+        </node>
+
+        <node pkg="rr_simul" name="morai_fake_cam" type="rr_fake_cam" output="screen">
+                <!--publish-->
+                <remap from="~camera" to="/usb_cam/image_raw"/>
+
+        </node>
+
+        <node pkg="rr_simul" name="morai_gps_msg_converter" type="rr_gps_msg_converter" output="screen">
+                <!--publish-->
+                <remap from="~ublox_gps" to="/ublox_gps/navpvt"/>
+                <!--subscribe-->
+                <remap from="~morai_gps" to="/morai/gps"/>
+                <remap from="~morai_ego" to="/Ego_topic"/>
+
+        </node>
+        <node pkg="rr_simul" name="morai_lidar_msg_converter" type="rr_lidar_msg_converter" output="screen">
+                <!--publish-->
+                <remap from="~velodyne" to="/velodyne_points"/>
+                <!--subscribe-->
+                <remap from="~morai_lidar" to="/lidar3D"/>
+        </node>
+
+        <node pkg="rr_simul" name="morai_obstacle_msg_converter" type="rr_obstacle_msg_converter" output="screen">
+                <!--publish-->
+                <remap from="~perception" to="/perception"/>
+                <!--subscribe-->
+                <remap from="~morai_ego" to="/Ego_topic"/>
+                <remap from="~morai_obstacle" to="/Object_topic"/>
+        </node>
+
+</launch>

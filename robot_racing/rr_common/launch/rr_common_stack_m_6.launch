@@ -1,0 +1,6 @@
+<launch>
+    <!-- stack 6 -->
+    <include file="$(find rr_common)/launch/rr_common_stack_m_5.launch"></include>
+    <!-- strategy -->
+    <include file="$(find rr_strategy)/launch/rr_strategy.launch"></include>
+ </launch>

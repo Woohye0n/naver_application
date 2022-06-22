@@ -1,0 +1,24 @@
+[submodule "third_party/ntrip_ros"]
+	path = third_party/ntrip_ros
+	url = https://github.com/rise-lab-skku-racing/ntrip_ros.git
+	branch = master
+[submodule "third_party/ublox_f9p"]
+	path = third_party/ublox_f9p
+	url = https://github.com/rise-lab-skku-racing/ublox_f9p.git
+	branch = master
+[submodule "third_party/rtcm_msgs"]
+	path = third_party/rtcm_msgs
+	url = https://github.com/rise-lab-skku-racing/rtcm_msgs.git
+	branch = master
+[submodule "third_party/velodyne"]
+	path = third_party/velodyne
+	url = https://github.com/rise-lab-skku-racing/velodyne.git
+	branch = master
+[submodule "ntrip_ros"]
+	path = ntrip_ros
+	url = https://github.com/rise-lab-skku-racing/ntrip_ros.git
+	branch = master
+[submodule "third_party/usb_cam"]
+	path = third_party/usb_cam
+	url = https://github.com/rise-lab-skku-racing/usb_cam.git
+	branch = develop

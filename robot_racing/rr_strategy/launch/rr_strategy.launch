@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="rr_strategy" name="rr_strategy" type="rr_strategy" output="screen">
+        <rosparam>
+                stop_distance: 5
+        </rosparam>
+        <remap from="~strategy" to="/rr_strategy/mode"/>
+        <remap from="~state" to="/rr_state_estimation/state"/>
+        <!--remap from="~collision" to="/rr_control/speed"/-->
+        <remap from="~obstacle" to="/rr_object_tracker/tracking"/>
+        <!-- <remap from="~obstacle" to="/perception"/> -->
+        <remap from="~target_speed" to="/rr_target_speed_selector/speed_candidate"/>
+    </node>
+</launch>

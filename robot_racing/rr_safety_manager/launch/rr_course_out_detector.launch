@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="rr_safety_manager" name="rr_safety_manager" type="rr_safety_manager" output="screen">
+        <remap from="~state" to="/rr_state_estimation/state"/>
+        <remap from="~erp42_command_raw_in" to="/rr_command_collector/command"/>
+        <remap from="~erp42_command_raw_out" to="/rr_safety_manager/command"/>
+
+        <rosparam>
+                out_check_comp: 5
+        </rosparam>
+    </node>
+</launch>

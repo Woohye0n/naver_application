@@ -1,0 +1,22 @@
+<launch>
+    <node pkg="rr_perception" type="rr_object_detection_node" name="rr_object_detection" output="screen">
+        <!-- input topics -->
+        <remap from="~input" to="/velodyne_points" />
+        <!-- output topics -->
+        <!-- <remap from="~detection" to=""/> -->
+        <rosparam>
+            lidar_height: 0.92 
+            seg_deg: 20
+            bin_num: 100
+            max_dis: 15
+            T_m: 10
+            T_b: 1
+            T_th: 0.3
+            T_d: 1
+            min_cluster_size: 5
+            max_cluster_size: 999999
+            max_neighbor_distance: 0.5
+            pruning_height: 0.1
+        </rosparam>
+    </node>
+</launch>

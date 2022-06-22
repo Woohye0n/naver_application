@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+        <node pkg="rr_state_estimation" name="rr_state_estimation" type="rr_state_estimation" output="screen">
+                <remap from="~state" to="/rr_state_estimation/state"/>
+                <remap from="~feedback" to="/rr_erp42/feedback_ext"/>
+
+        </node>
+</launch>

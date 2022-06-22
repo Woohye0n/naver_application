@@ -1,0 +1,7 @@
+<library path="lib/libobstacle_filter">
+  <class name="rr_perception/ObjectDetector" type="rr_perception::ObjectDetectorNodelet" base_class_type="nodelet::Nodelet">
+  <description>
+  Ground Detector
+  </description>
+  </class>
+</library>

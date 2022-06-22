@@ -1,0 +1,26 @@
+<launch>
+    <node pkg="rr_vms" name="rr_vms" type="rr_vms" output="screen">
+        <rosparam>
+            <!-- erp42 feedback 20Hz(~=19.6Hz) -->
+                erp42_feedback_hb_interval: 0.05
+                erp42_feedback_hb_jitter: 0.001
+                            <!-- velodyne 10Hz(~=9.9Hz) -->
+                velodyne_hb_interval: 1
+                velodyne_hb_jitter: 0.001
+                            <!-- usb cam 30Hz(~=29.9Hz) -->
+                camera_hb_interval: 0.0333
+                camera_hb_jitter: 0.0001
+                            <!-- gps 10Hz(~=9.4Hz) -->
+                gps_hb_interval: 0.1
+                gps_hb_jitter: 0.0064
+        </rosparam>
+        <remap from="~camera" to="/usb_cam/image_raw" />
+        <remap from="~erp42_command_raw_in" to="/rr_safety_manager/command" />
+        <remap from="~erp42_command_raw_out" to="/rr_erp42/command" />
+        <remap from="~erp42_feedback_raw" to="/rr_erp42/feedback" />
+        <remap from="~gps" to="/ublox_gps/navpvt" />
+        <remap from="~velodyne_points" to="/velodyne_points" />
+        <remap from="~pi_controller_on_off" to="/on_off" />
+
+    </node>
+</launch>

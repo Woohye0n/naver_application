@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+        <node pkg="rr_collision_safety" name="rr_collision_safety" type="rr_collision_safety" output="screen">
+                <rosparam>
+                        collision_comp_ : 15
+                </rosparam>
+        </node>
+</launch>

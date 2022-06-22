@@ -1,0 +1,7 @@
+<launch>
+        <node pkg="rr_gps" name="rr_gps" type="rr_gps" output="screen">
+            <param name="dev_path" value="/dev/ttyACM0"/>
+            <param name="baud" value="9600"/>
+            <param name="buf_size" value="512"/>
+        </node>
+</launch>

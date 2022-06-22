@@ -1,0 +1,16 @@
+<launch>
+        <node pkg="rr_path_planner" name="rr_path_planner" type="rr_path_planner" output="screen">
+            
+            <remap from="~state" to="/rr_state_estimation/state"/>
+            <remap from="~course" to="/rr_strategy/mode"/>
+            <remap from="~target_speed" to="/rr_target_speed_selector/speed_candidate"/>
+        </node>
+        <rosparam>
+            /rr_path_planner/buffer_size: 30
+            /rr_path_planner/deg_diff_allowed: 10
+            /rr_path_planner/path_diff_allowed: 3
+            /rr_path_planner/min_radius: 150    
+            /rr_path_planner/min_vel: 5
+        </rosparam>
+</launch>
+

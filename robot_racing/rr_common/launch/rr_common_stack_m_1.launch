@@ -1,0 +1,6 @@
+<launch>
+    <!-- simul -->
+    <include file="$(find rr_simul)/launch/rr_morai.launch"></include>
+    <!-- data resource manager -->
+    <include file="$(find rr_data_resource_manager)/launch/data_resource_manager.launch"></include>
+</launch>

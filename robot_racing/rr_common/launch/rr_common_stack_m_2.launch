@@ -1,0 +1,6 @@
+<launch>
+    <!-- stack 1 -->
+    <include file="$(find rr_common)/launch/rr_common_stack_m_1.launch"></include>
+    <!-- vehicle management system -->
+    <include file="$(find rr_vms)/launch/rr_vms.launch"></include>
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+    <!-- stack 3 -->
+    <include file="$(find rr_common)/launch/rr_common_stack_m_3.launch"></include>
+    <!-- collision safety -->
+    <include file="$(find rr_collision_safety)/launch/rr_collision_safety.launch"></include>
+</launch>

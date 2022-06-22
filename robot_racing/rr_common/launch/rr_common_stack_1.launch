@@ -1,0 +1,12 @@
+<launch>
+    <!-- erp42 serial -->
+    <include file="$(find rr_devices)/launch/rr_erp42.launch"> </include>
+    <!-- velodyne lidar -->
+    <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch"> </include>
+    <!-- ublox gps -->
+    <include file="$(find ublox_gps)/launch/ublox_zed-f9p.launch"> </include>
+    <!-- usb cam -->
+    <include file="$(find usb_cam)/launch/usb_cam-test.launch"> </include>
+    <!-- data resource manager -->
+    <include file="$(find rr_data_resource_manager)/launch/data_resource_manager.launch"> </include>
+</launch>

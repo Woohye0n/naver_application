@@ -1,0 +1,13 @@
+<launch>
+        <node pkg="rr_tf_maker" name="tf_maker" type="rr_tf_maker" output="screen">
+                <!--subscribe-->
+                <remap from="~StateEstimated" to="/rr_state_estimation/state" />
+                <rosparam>
+                        gps_z: 0.81
+                        velodyne_x: 0.415 
+                        velodyne_y: 0.0
+                        velodyne_z: 0.11
+                </rosparam>
+        </node>
+
+</launch>
